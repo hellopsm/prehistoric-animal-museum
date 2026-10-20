@@ -28,10 +28,10 @@ const rootIndex = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/museum/" />
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://leon-made-this.work/museum/" />
-    <title>Opening the Prehistoric Animal Museum</title>
+    <title>Opening the 3D Zoo</title>
   </head>
   <body>
-    <p><a href="/museum/">Open the Prehistoric Animal Museum · 打开史前动物博物馆</a></p>
+    <p><a href="/museum/">Open the 3D Zoo · 打开3D动物园</a></p>
   </body>
 </html>
 `

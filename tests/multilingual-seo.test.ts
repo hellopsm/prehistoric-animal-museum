@@ -99,9 +99,9 @@ describe('multilingual SEO artifacts', () => {
 
     expect(document.documentElement.lang).toBe('zh-CN')
     expect(document.title).toBe(
-      '史前动物博物馆 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
+      '3D动物园 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
     )
-    expect(document.querySelector('h1')?.textContent).toBe('史前动物博物馆')
+    expect(document.querySelector('h1')?.textContent).toBe('3D动物园')
     expect(document.querySelectorAll('[data-seo-catalogue] li')).toHaveLength(
       mainCollection.animalIds.length,
     )
@@ -147,8 +147,8 @@ describe('multilingual SEO artifacts', () => {
       fileName: 'zh-CN/index.html',
       lang: 'zh-CN',
       canonical: 'https://example.test/museum/zh-CN/',
-      title: '史前动物博物馆 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
-      heading: '史前动物博物馆',
+      title: '3D动物园 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
+      heading: '3D动物园',
       catalogueEntries: ['剑龙', '沧龙', '无齿翼龙'],
       descriptionFragment: `${mainCollection.animalIds.length} 位来自陆地、天空与水中`,
       brand: 'Leon做了个',
@@ -160,8 +160,8 @@ describe('multilingual SEO artifacts', () => {
       fileName: 'en/index.html',
       lang: 'en',
       canonical: 'https://example.test/museum/en/',
-      title: 'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
-      heading: 'Prehistoric Animal Museum',
+      title: '3D Zoo for Kids | Free Interactive 3D Exhibits',
+      heading: '3D Zoo',
       catalogueEntries: ['Stegosaurus', 'Mosasaurus', 'Pteranodon'],
       descriptionFragment: `${mainCollection.animalIds.length} prehistoric animals from land, sky and sea`,
       brand: 'Leon Made This',
@@ -336,8 +336,8 @@ describe('multilingual SEO artifacts', () => {
           position: 1,
           name:
             locale === 'zh-CN'
-              ? '史前动物博物馆'
-              : 'Prehistoric Animal Museum',
+              ? '3D动物园'
+              : '3D Zoo',
           item: `https://example.test/museum/${locale}/`,
         },
         {
@@ -419,9 +419,9 @@ describe('multilingual SEO artifacts', () => {
     const zhCN = artifactSource(artifacts, 'social/museum.zh-CN.svg')
     const en = artifactSource(artifacts, 'social/museum.en.svg')
 
-    expect(zhCN).toContain('史前动物博物馆')
+    expect(zhCN).toContain('3D动物园')
     expect(zhCN).toContain('Leon做了个')
-    expect(en).toContain('Prehistoric Animal Museum')
+    expect(en).toContain('3D Zoo')
     expect(en).toContain('Leon Made This')
     expect(en).toContain('font-family="ui-rounded, system-ui, sans-serif"')
     expect(zhCN).not.toBe(en)

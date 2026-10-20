@@ -84,7 +84,7 @@ async function createCardFile(animal: ShareAnimal, locale: Locale): Promise<File
   context.fillRect(0, 1370, 1080, 550)
   context.fillStyle = '#fff9e9'
   context.font = '700 37px sans-serif'
-  context.fillText(locale === 'zh-CN' ? '史前动物博物馆' : 'Prehistoric Animal Museum', 80, 1520)
+  context.fillText(locale === 'zh-CN' ? '3D动物园' : '3D Zoo', 80, 1520)
   context.font = '800 112px sans-serif'
   context.fillText(animal.name, 76, 1660)
   context.font = '500 38px sans-serif'
@@ -153,7 +153,7 @@ function ShareArt({ animal, locale }: { animal: ShareAnimal; locale: Locale }) {
     <div className="share-dialog-art" role="img" aria-label={locale === 'zh-CN' ? `${animal.name}分享卡片预览` : `${animal.name} share card preview`}>
       <img className="share-dialog-art__background" src={animal.backgroundPortrait} alt="" />
       <img className="share-dialog-art__animal" src={animal.posterPortrait} alt="" />
-      <span className="share-dialog-art__top">{locale === 'zh-CN' ? '史前动物博物馆' : 'Prehistoric Animal Museum'}</span>
+      <span className="share-dialog-art__top">{locale === 'zh-CN' ? '3D动物园' : '3D Zoo'}</span>
       <span className="share-dialog-art__caption">
         <strong>{animal.name}</strong>
         <span>{animal.intro}</span>
@@ -234,7 +234,7 @@ export default function ShareDialog({ animal, locale, onClose, returnFocusTo }: 
   const cardFile = cardData?.key === cardKey ? cardData.file : null
   const shareableImage = canShareImage(cardFile)
   const exhibitUrl = new URL(`animals/${animal.id}/`, museumOfficialUrl(locale)).toString()
-  const intentText = `${zh ? `今天在史前动物博物馆遇见${animal.name}。${animal.intro}` : `Meet ${animal.name} at the Prehistoric Animal Museum. ${animal.intro}`} @leon_made_this`
+  const intentText = `${zh ? `今天在3D动物园遇见${animal.name}。${animal.intro}` : `Meet ${animal.name} at the 3D Zoo. ${animal.intro}`} @leon_made_this`
   const xIntentUrl = `https://twitter.com/intent/tweet?${new URLSearchParams({ text: intentText, url: exhibitUrl })}`
   const threadsIntentUrl = `https://www.threads.com/intent/post?${new URLSearchParams({ text: intentText, url: exhibitUrl })}`
 
@@ -309,7 +309,7 @@ export default function ShareDialog({ animal, locale, onClose, returnFocusTo }: 
       return
     }
     try {
-      await navigator.share({ files: [cardFile], title: `${animal.name} · ${zh ? '史前动物博物馆' : 'Prehistoric Animal Museum'}` })
+      await navigator.share({ files: [cardFile], title: `${animal.name} · ${zh ? '3D动物园' : '3D Zoo'}` })
     } catch (error) {
       if (error instanceof DOMException && error.name === 'AbortError') return
       await saveImage()
@@ -322,7 +322,7 @@ export default function ShareDialog({ animal, locale, onClose, returnFocusTo }: 
       <section aria-labelledby={titleId} aria-modal="true" className="share-dialog-panel" ref={panelRef} role="dialog">
         <header className="share-dialog-header">
           <div>
-            <span className="share-dialog-eyebrow">{zh ? '史前动物博物馆' : 'Prehistoric Animal Museum'} · {animal.name}</span>
+            <span className="share-dialog-eyebrow">{zh ? '3D动物园' : '3D Zoo'} · {animal.name}</span>
             <h2 id={titleId}>{zh ? '分享这次发现' : 'Share this discovery'}</h2>
           </div>
           <button aria-label={zh ? '关闭' : 'Close'} className="share-dialog-close" onClick={onClose} ref={closeRef} type="button"><X size={22} /></button>

@@ -229,42 +229,42 @@ const pageCopy = {
     locale: 'x-default',
     htmlLang: 'en',
     brand: 'Leon Made This | Leon做了个',
-    title: 'Prehistoric Animal Museum | 史前动物博物馆',
+    title: '3D Zoo | 3D动物园',
     description: `Choose Simplified Chinese or English for a family-friendly 3D museum featuring ${catalogueAnimalCount} prehistoric animals. 选择简体中文或 English，和孩子一起探索 ${catalogueAnimalCount} 位史前动物朋友。`,
-    heading: 'Prehistoric Animal Museum | 史前动物博物馆',
+    heading: '3D Zoo | 3D动物园',
     introduction:
-      'A gentle 3D museum for children aged 2–6 and the grown-ups exploring with them. 一座为 2–6 岁孩子和陪伴探索的家长准备的 3D 史前动物博物馆。',
+      'A gentle 3D museum for children aged 2–6 and the grown-ups exploring with them. 一座为 2–6 岁孩子和陪伴探索的家长准备的 3D动物园。',
     privacy: `Explore ${catalogueAnimalCount} prehistoric animals from land, sky and sea. No account, advertising or page analytics are used, and narration never starts by itself. 展厅收录陆地、天空与水中的 ${catalogueAnimalCount} 位史前动物，无需账号，没有广告和页面分析，也不会自动播放声音。`,
     catalogueHeading: 'Museum collection | 博物馆藏品',
     languageLabel: 'Choose a language | 选择语言',
     systemLanguageLabel: 'Follow system | 跟随系统',
     socialImageFileName: 'social/museum.png',
     socialImageAlt:
-      'Prehistoric Animal Museum — 史前动物博物馆',
+      '3D Zoo — 3D动物园',
   },
   'zh-CN': {
     locale: 'zh-CN',
     htmlLang: 'zh-CN',
     brand: 'Leon做了个',
-    title: '史前动物博物馆 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
-    description: `和孩子一起走进 3D 史前动物博物馆，观察 ${catalogueAnimalCount} 位来自陆地、天空与水中的史前朋友。`,
-    heading: '史前动物博物馆',
+    title: '3D动物园 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
+    description: `和孩子一起走进 3D动物园，观察 ${catalogueAnimalCount} 位来自陆地、天空与水中的史前朋友。`,
+    heading: '3D动物园',
     introduction:
-      '这是一座面向 2–6 岁孩子和家长的 3D 史前动物博物馆。一起转动模型，听观察引导，再读给家长的科学资料。',
+      '这是一座面向 2–6 岁孩子和家长的 3D动物园。一起转动模型，听观察引导，再读给家长的科学资料。',
     privacy: `展厅收录 ${catalogueAnimalCount} 位来自陆地、天空与水中的史前动物。无需账号，没有广告和页面分析，声音只会在你主动点击后播放。`,
     catalogueHeading: '博物馆藏品',
     languageLabel: '选择语言',
     systemLanguageLabel: '跟随系统',
     socialImageFileName: 'social/museum.zh-CN.png',
-    socialImageAlt: '史前动物博物馆亲子 3D 展馆',
+    socialImageAlt: '3D动物园亲子 3D 展馆',
   },
   en: {
     locale: 'en',
     htmlLang: 'en',
     brand: 'Leon Made This',
-    title: 'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
+    title: '3D Zoo for Kids | Free Interactive 3D Exhibits',
     description: `Explore ${catalogueAnimalCount} prehistoric animals from land, sky and sea in a gentle 3D museum made for young children and their grown-ups.`,
-    heading: 'Prehistoric Animal Museum',
+    heading: '3D Zoo',
     introduction:
       'A gentle 3D museum for children aged 2–6 and the grown-ups exploring with them. Turn each model, listen to a short observation guide and open the grown-up notes when you want to go deeper.',
     privacy: `Meet ${catalogueAnimalCount} prehistoric animals from land, sky and sea. There are no accounts, adverts or page analytics, and narration only plays when you choose it.`,
@@ -273,7 +273,7 @@ const pageCopy = {
     systemLanguageLabel: 'Follow system',
     socialImageFileName: 'social/museum.en.png',
     socialImageAlt:
-      'Prehistoric Animal Museum, a 3D family adventure by Leon Made This',
+      '3D Zoo, a 3D family adventure by Leon Made This',
   },
 } as const satisfies Record<SeoPageLocale, SeoPageCopy>
 
@@ -337,9 +337,9 @@ function museumStructuredData(
   const personalSite = `${options.siteOrigin}/`
   const museumUrl = canonicalUrl(copy.locale, options)
   const museumName =
-    copy.locale === 'en' ? 'Prehistoric Animal Museum' : '史前动物博物馆'
+    copy.locale === 'en' ? '3D Zoo' : '3D动物园'
   const alternateMuseumName =
-    copy.locale === 'en' ? '史前动物博物馆' : 'Prehistoric Animal Museum'
+    copy.locale === 'en' ? '3D动物园' : '3D Zoo'
 
   return JSON.stringify({
     '@context': 'https://schema.org',
@@ -499,11 +499,11 @@ function renderCatalogue(locale: SeoPageLocale): string {
 function renderShell(copy: SeoPageCopy, entryFallback = false): string {
   const heading =
     copy.locale === 'x-default'
-      ? '<span lang="en">Prehistoric Animal Museum</span> | <span lang="zh-CN">史前动物博物馆</span>'
+      ? '<span lang="en">3D Zoo</span> | <span lang="zh-CN">3D动物园</span>'
       : escapeHtml(copy.heading)
   const introduction =
     copy.locale === 'x-default'
-      ? '<span lang="en">A gentle 3D museum for children aged 2–6 and the grown-ups exploring with them.</span> <span lang="zh-CN">一座为 2–6 岁孩子和陪伴探索的家长准备的 3D 史前动物博物馆。</span>'
+      ? '<span lang="en">A gentle 3D museum for children aged 2–6 and the grown-ups exploring with them.</span> <span lang="zh-CN">一座为 2–6 岁孩子和陪伴探索的家长准备的 3D动物园。</span>'
       : escapeHtml(copy.introduction)
   const privacy =
     copy.locale === 'x-default'
@@ -609,8 +609,8 @@ function renderAnimalDetailDocument(
   const description = animalSeoDescription(content.narration.sentences)
   const title =
     locale === 'zh-CN'
-      ? `${content.name} | 史前动物博物馆`
-      : `${content.name} | Prehistoric Animal Museum`
+      ? `${content.name} | 3D动物园`
+      : `${content.name} | 3D Zoo`
   const heroPath = `../../../animals/${definition.id}/hero.webp`
   const heroPortraitPath = `../../../animals/${definition.id}/hero-portrait.webp`
   const museumHref = `../../../${locale}/`
@@ -641,7 +641,7 @@ function renderAnimalDetailDocument(
     })
     .join('')
   const museumName =
-    locale === 'zh-CN' ? '史前动物博物馆' : 'Prehistoric Animal Museum'
+    locale === 'zh-CN' ? '3D动物园' : '3D Zoo'
   const structuredData = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -810,7 +810,7 @@ function renderAnimalDetailDocument(
           <div class="animal-related__grid">${relatedAnimals}</div>
         </section>
       </article>
-      <footer class="animal-footer">Prehistoric Animal Museum · 史前动物博物馆</footer>
+      <footer class="animal-footer">3D Zoo · 3D动物园</footer>
     </main>
     <script data-locale-cookie>document.querySelector('[data-locale-choice]')?.addEventListener('click',function(){document.cookie=${JSON.stringify(localeCookie)}})</script>
   </body>
@@ -1018,10 +1018,10 @@ function renderSocialCard(
   const copy = pageCopy[locale]
   const titleLines =
     locale === 'zh-CN'
-      ? ['史前动物博物馆']
+      ? ['3D动物园']
       : locale === 'en'
         ? ['Prehistoric Animal', 'Museum']
-        : ['Prehistoric Animal Museum', '史前动物博物馆']
+        : ['3D Zoo', '3D动物园']
   const titleFontSize = locale === 'x-default' ? 58 : 68
   const titleStartY = titleLines.length === 1 ? 270 : 225
   const titleMarkup = titleLines

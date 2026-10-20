@@ -14,16 +14,16 @@ interface ResearchSummaryInput {
 }
 
 const zhCN = {
-  museumName: '史前动物博物馆',
+  museumName: '3D动物园',
   creatorBrand: 'Leon做了个',
   creatorAboutLabel: '了解Leon做了个和这座博物馆',
   todayMeet: '今天认识',
   localReview: '本地评审',
-  documentTitle: '史前动物博物馆 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
+  documentTitle: '3D动物园 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
   seo: {
     description: (count: number) =>
-      `和孩子一起走进 3D 史前动物博物馆，观察 ${count} 位来自陆地、天空与水中的史前朋友。`,
-    socialImageAlt: '史前动物博物馆亲子 3D 展馆',
+      `和孩子一起走进 3D动物园，观察 ${count} 位来自陆地、天空与水中的史前朋友。`,
+    socialImageAlt: '3D动物园亲子 3D 展馆',
   },
   stageLabel: (animal: string) => `${animal}模型展台`,
   navigationLabel: '动物选择',
@@ -147,7 +147,7 @@ const zhCN = {
     close: '关闭关于这座博物馆',
     heading: '一个程序员爸爸，为女儿做的小博物馆',
     paragraphs: [
-      '我是 Leon，一个程序员爸爸。女儿三岁时会害怕电视里的恐龙追逐，所以我给她做了这座可以安静观察、想听再听的 3D 史前动物博物馆。',
+      '我是 Leon，一个程序员爸爸。女儿三岁时会害怕电视里的恐龙追逐，所以我给她做了这座可以安静观察、想听再听的 3D动物园。',
       '这里免费访问，不用注册，没有广告，也不做访问统计。一次发现一个有趣的细节，就已经足够。',
     ],
     source: '在 GitHub 查看源码',
@@ -156,8 +156,8 @@ const zhCN = {
   official: {
     eyebrow: '官方来源',
     title: '认准 Leon做了个',
-    byline: '史前动物博物馆由 Leon做了个制作并维护。以下地址用于确认官方作品与创作者来源。',
-    museum: '史前动物博物馆官方网站',
+    byline: '3D动物园由 Leon做了个制作并维护。以下地址用于确认官方作品与创作者来源。',
+    museum: '3D动物园官方网站',
     personalSite: 'Leon 的个人官网',
   },
   star: {
@@ -221,17 +221,17 @@ type WidenMessages<Value> = Value extends string
 export type MuseumMessages = WidenMessages<typeof zhCN>
 
 const en = {
-  museumName: 'Prehistoric Animal Museum',
+  museumName: '3D Zoo',
   creatorBrand: 'Leon Made This',
   creatorAboutLabel: 'About Leon Made This and this museum',
   todayMeet: 'Meet today’s friend',
   localReview: 'Local review',
-  documentTitle: 'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
+  documentTitle: '3D Zoo for Kids | Free Interactive 3D Exhibits',
   seo: {
     description: (count) =>
       `Explore ${count} prehistoric animals from land, sky and sea in a gentle 3D museum made for young children and their grown-ups.`,
     socialImageAlt:
-      'Prehistoric Animal Museum, a 3D family adventure by Leon Made This',
+      '3D Zoo, a 3D family adventure by Leon Made This',
   },
   stageLabel: (animal) => `${animal} 3D exhibit`,
   navigationLabel: 'Choose an animal',
@@ -367,8 +367,8 @@ const en = {
     eyebrow: 'Official source',
     title: 'Made by Leon Made This',
     byline:
-      'Prehistoric Animal Museum is made and maintained by Leon Made This. Use these addresses to verify the official project and its creator.',
-    museum: 'Official Prehistoric Animal Museum',
+      '3D Zoo is made and maintained by Leon Made This. Use these addresses to verify the official project and its creator.',
+    museum: 'Official 3D Zoo',
     personalSite: "Leon's personal website",
   },
   star: {

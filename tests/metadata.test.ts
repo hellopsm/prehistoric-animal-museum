@@ -24,15 +24,15 @@ describe('runtime locale metadata', () => {
   it('updates every locale-sensitive canonical and social field after a smooth switch', () => {
     updateLocalizedMetadata({
       locale: 'en',
-      documentTitle: 'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
-      museumTitle: 'Prehistoric Animal Museum',
+      documentTitle: '3D Zoo for Kids | Free Interactive 3D Exhibits',
+      museumTitle: '3D Zoo',
       creatorBrand: 'Leon Made This',
       description: 'Explore 18 prehistoric animals.',
-      socialImageAlt: 'Prehistoric Animal Museum by Leon Made This',
+      socialImageAlt: '3D Zoo by Leon Made This',
     })
 
     expect(document.title).toBe(
-      'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
+      '3D Zoo for Kids | Free Interactive 3D Exhibits',
     )
     expect(
       document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href,
@@ -72,11 +72,11 @@ describe('runtime locale metadata', () => {
     expect(
       document.querySelector<HTMLMetaElement>('meta[property="og:image:alt"]')
         ?.content,
-    ).toBe('Prehistoric Animal Museum by Leon Made This')
+    ).toBe('3D Zoo by Leon Made This')
     expect(
       document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]')
         ?.content,
-    ).toBe('Prehistoric Animal Museum')
+    ).toBe('3D Zoo')
     expect(
       document.querySelector<HTMLMetaElement>('meta[name="twitter:card"]')
         ?.content,
@@ -131,8 +131,8 @@ describe('runtime locale metadata', () => {
 
     updateLocalizedMetadata({
       locale: 'zh-CN',
-      documentTitle: '史前动物博物馆 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
-      museumTitle: '史前动物博物馆',
+      documentTitle: '3D动物园 | 给 2–6 岁孩子的免费 3D 恐龙与古生物网站',
+      museumTitle: '3D动物园',
       creatorBrand: 'Leon做了个',
       description: '说明',
       socialImageAlt: '双语分享卡片',
@@ -169,8 +169,8 @@ describe('runtime locale metadata', () => {
 
     updateLocalizedMetadata({
       locale: 'en',
-      documentTitle: 'Mosasaurus | Prehistoric Animal Museum',
-      museumTitle: 'Prehistoric Animal Museum',
+      documentTitle: 'Mosasaurus | 3D Zoo',
+      museumTitle: '3D Zoo',
       creatorBrand: 'Leon Made This',
       description: 'Museum description',
       socialImageAlt: 'Museum card',
@@ -182,7 +182,7 @@ describe('runtime locale metadata', () => {
     })
 
     expect(document.title).toBe(
-      'Mosasaurus | Prehistoric Animal Museum',
+      'Mosasaurus | 3D Zoo',
     )
     expect(
       document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href,
@@ -240,8 +240,8 @@ describe('runtime locale metadata', () => {
     )
     updateLocalizedMetadata({
       locale: 'zh-CN',
-      documentTitle: '沧龙 | 史前动物博物馆',
-      museumTitle: '史前动物博物馆',
+      documentTitle: '沧龙 | 3D动物园',
+      museumTitle: '3D动物园',
       creatorBrand: 'Leon做了个',
       description: '博物馆说明',
       socialImageAlt: '博物馆分享图',
@@ -260,7 +260,7 @@ describe('runtime locale metadata', () => {
     expect(
       document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
         ?.content,
-    ).toBe('沧龙 | 史前动物博物馆')
+    ).toBe('沧龙 | 3D动物园')
     expect(
       document.querySelector<HTMLScriptElement>('#animal-structured-data')
         ?.textContent,
@@ -275,8 +275,8 @@ describe('runtime locale metadata', () => {
     )
     updateLocalizedMetadata({
       locale: 'en',
-      documentTitle: 'Mosasaurus | Prehistoric Animal Museum',
-      museumTitle: 'Prehistoric Animal Museum',
+      documentTitle: 'Mosasaurus | 3D Zoo',
+      museumTitle: '3D Zoo',
       creatorBrand: 'Leon Made This',
       description: 'Museum description',
       socialImageAlt: 'Museum card',
@@ -290,8 +290,8 @@ describe('runtime locale metadata', () => {
     window.history.replaceState({}, '', '/museum/en/?animal=mosasaurus')
     updateLocalizedMetadata({
       locale: 'en',
-      documentTitle: 'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
-      museumTitle: 'Prehistoric Animal Museum',
+      documentTitle: '3D Zoo for Kids | Free Interactive 3D Exhibits',
+      museumTitle: '3D Zoo',
       creatorBrand: 'Leon Made This',
       description: 'Explore 18 prehistoric animals.',
       socialImageAlt: 'Museum card',

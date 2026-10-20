@@ -8,7 +8,7 @@ const noJsDetailCases = [
     atmosphere: 'forest',
     introduction: '看看它背上的两排骨板，像不像一列起伏的小山？',
     locale: 'zh-CN',
-    museumName: '史前动物博物馆',
+    museumName: '3D动物园',
     name: '剑龙',
     siblingId: 'tyrannosaurus-rex',
   },
@@ -18,7 +18,7 @@ const noJsDetailCases = [
     introduction:
       'Look at its round, bony dome and the little bumps around it. Does it look like a small, round hat?',
     locale: 'en',
-    museumName: 'Prehistoric Animal Museum',
+    museumName: '3D Zoo',
     name: 'Pachycephalosaurus',
     siblingId: 'pteranodon',
   },
@@ -27,7 +27,7 @@ const noJsDetailCases = [
     atmosphere: 'air',
     introduction: '看看它长长的无齿嘴巴、头后的冠和展开的大翅膀。',
     locale: 'zh-CN',
-    museumName: '史前动物博物馆',
+    museumName: '3D动物园',
     name: '无齿翼龙',
     siblingId: 'tupandactylus',
   },
@@ -37,7 +37,7 @@ const noJsDetailCases = [
     introduction:
       'Look at its flippers and powerful tail. Can you imagine its tail pushing it forwards while the flippers steer?',
     locale: 'en',
-    museumName: 'Prehistoric Animal Museum',
+    museumName: '3D Zoo',
     name: 'Mosasaurus',
     siblingId: 'megalodon',
   },
@@ -87,7 +87,7 @@ test('hydrates the real English museum first frame without replacing it', async 
   await expect(
     page.getByRole('heading', {
       level: 1,
-      name: 'Prehistoric Animal Museum',
+      name: '3D Zoo',
     }),
   ).toBeVisible()
   await expect(page.locator('a[data-animal-detail-link]')).toHaveCount(18)
@@ -306,7 +306,7 @@ test('shows the default Chinese museum immediately when the edge redirect fails 
   await expect(page.locator('.seo-static-shell')).toHaveCount(0)
   await expect(page.locator('#museum-experience')).toBeVisible()
   await expect(
-    page.getByRole('heading', { level: 1, name: '史前动物博物馆' }),
+    page.getByRole('heading', { level: 1, name: '3D动物园' }),
   ).toBeVisible()
   await expect(
     page.getByRole('button', { name: '切换语言，当前简体中文' }),
@@ -388,7 +388,7 @@ test('returns from a direct detail deep link to the matching museum exhibit and 
     'museum',
   )
   await expect(page.locator('.museum-kicker')).toContainText(
-    'Prehistoric Animal Museum',
+    '3D Zoo',
   )
   await expect(page.locator('.animal-title')).toHaveText('Mosasaurus')
   await expect(page.locator('.museum-kicker')).toHaveJSProperty(

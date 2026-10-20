@@ -103,7 +103,7 @@ async function openMuseum(
   const response = await page.goto(`./zh-CN/${query}`)
   expect(response?.ok()).toBe(true)
   await expect(
-    page.getByRole('heading', { level: 1, name: '史前动物博物馆' }),
+    page.getByRole('heading', { level: 1, name: '3D动物园' }),
   ).toBeVisible()
   await expect(page.getByRole('heading', { level: 2, name: '剑龙' })).toBeVisible()
 

@@ -154,7 +154,7 @@ function updateMuseumStructuredData({
     '@type': 'WebApplication',
     '@id': `${museumCanonical}#museum`,
     alternateName:
-      locale === 'zh-CN' ? 'Prehistoric Animal Museum' : '史前动物博物馆',
+      locale === 'zh-CN' ? '3D Zoo' : '3D动物园',
     applicationCategory: 'EducationalApplication',
     brand: {
       '@type': 'Brand',

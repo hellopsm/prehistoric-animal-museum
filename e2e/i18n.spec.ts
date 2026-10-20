@@ -503,7 +503,7 @@ test('an English locale path wins for this visit without overwriting a saved cho
   const response = await page.goto('./en/')
   expect(response?.ok()).toBe(true)
   expect(await response?.text()).toContain(
-    '<title>Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits</title>',
+    '<title>3D Zoo for Kids | Free Interactive 3D Exhibits</title>',
   )
   await waitForMuseumShell(page, 'Stegosaurus')
 
@@ -511,13 +511,13 @@ test('an English locale path wins for this visit without overwriting a saved cho
   await expect(
     page.getByRole('heading', {
       level: 1,
-      name: 'Prehistoric Animal Museum',
+      name: '3D Zoo',
     }),
   ).toBeVisible()
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
   await expect(page.locator('html')).toHaveAttribute('data-locale', 'en')
   await expect(page).toHaveTitle(
-    'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
+    '3D Zoo for Kids | Free Interactive 3D Exhibits',
   )
   await expect(
     page.getByRole('button', {
@@ -614,7 +614,7 @@ test('switches language with the radio menu without reloading the page or model'
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
   await expect(page.locator('html')).toHaveAttribute('data-locale', 'en')
   await expect(page).toHaveTitle(
-    'Prehistoric Animal Museum for Kids | Free Interactive 3D Exhibits',
+    '3D Zoo for Kids | Free Interactive 3D Exhibits',
   )
   await expect(page.locator('#museum-experience')).toHaveAttribute(
     'data-ready-animal-id',
@@ -1131,7 +1131,7 @@ test.describe('unsupported system language', () => {
     await expect(page.locator('.seo-static-shell')).toHaveCount(0)
     await expect(page.locator('#museum-experience')).toBeVisible()
     await expect(
-      page.getByRole('heading', { level: 1, name: '史前动物博物馆' }),
+      page.getByRole('heading', { level: 1, name: '3D动物园' }),
     ).toBeVisible()
     expect(new URL(page.url()).pathname).toBe(nestedPath)
     await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN')

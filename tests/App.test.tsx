@@ -409,7 +409,7 @@ describe('App', () => {
     expect(viewerMock.constructorCount).toBe(1)
     expect(viewerMock.stageModel).toHaveBeenCalledTimes(1)
     expect(
-      screen.getByRole('heading', { level: 1, name: '史前动物博物馆' }),
+      screen.getByRole('heading', { level: 1, name: '3D动物园' }),
     ).toBeVisible()
     expect(
       screen.getByRole('heading', { level: 2, name: '剑龙' }),
@@ -852,7 +852,7 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'Prehistoric Animal Museum',
+        name: '3D Zoo',
       }),
     ).toBeVisible()
     expect(
@@ -1086,7 +1086,7 @@ describe('App', () => {
     )
     expect(
       within(dialog).getByRole('link', {
-        name: /史前动物博物馆官方网站/,
+        name: /3D动物园官方网站/,
       }),
     ).toHaveAttribute(
       'href',
@@ -1195,7 +1195,7 @@ describe('App', () => {
     )
     expect(
       within(dialog).getByRole('link', {
-        name: /史前动物博物馆官方网站/,
+        name: /3D动物园官方网站/,
       }),
     ).toHaveAttribute(
       'href',
